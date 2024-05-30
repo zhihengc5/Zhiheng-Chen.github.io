@@ -24,8 +24,34 @@
         <label><p><b><u>This is the link to BWF(badminton): </u></b><a href="https://bwf.tournamentsoftware.com">BWF</a></p></label>
     </br>
     </center>
+    
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat" style="width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" onclick="alert('You clicked the cat!')">
+    <script>
+        const cat = document.querySelector('img');
+        let x = 0;
+        let y = 0;
+        let dx = 1;
+        let dy = 1;
 
+        function moveCat() {
+            x += dx;
+            y += dy;
+
+            if (x > window.innerWidth - cat.width || x < 0) {
+                dx = -dx;
+            }
+            if (y > window.innerHeight - cat.height || y < 0) {
+                dy = -dy;
+            }
+
+            cat.style.left = x + 'px';
+            cat.style.top = y + 'px';
+        }
+
+        setInterval(moveCat, 10);
+    </script>
   <script src="script.js"></script>
+
 </body>
 
 </html>
